@@ -1,0 +1,255 @@
+.concept__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15vh 0;
+    gap: 10vh;
+}
+
+.concept__block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.concept__label {
+    font-family: 'nm-mono', monospace;
+    text-transform: uppercase;
+    font-size: calc(var(--size-font) * 0.75);
+    line-height: 125%;
+    color: var(--black);
+    padding-top: 0.5rem;
+    letter-spacing: 0.05em;
+    width: 20%;
+}
+
+.concept__text {
+    font-size: calc(var(--size-font) * 2.2);
+    line-height: 130%;
+    color: var(--grey);
+    width: 70%;
+    font-weight: 400;
+    margin: 0;
+    text-indent: 20%;
+}
+
+.archi__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 10vh 0;
+}
+
+.archi__title {
+    font-size: calc(var(--size-font) * 5.5);
+    line-height: 95%;
+    color: var(--grey);
+    font-family: 'nm-medium', sans-serif;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+.archi__text {
+    font-size: calc(var(--size-font) * 1.25);
+    line-height: 140%;
+    color: var(--grey);
+    width: 45%;
+    margin-left: auto;
+}
+
+.home__visual {
+    width: 100%;
+    height: 60vh;
+    background-color: var(--black);
+    margin: 5vh 0;
+    width: 60%;
+    margin-left: auto;
+    border-radius: 0.5rem;
+}
+
+
+/* --- STICKY FEATURES --- */
+/* --- CONFIGURATION GLOBALE --- */
+.section--concept {
+    background-color: #EBEAE5;
+    /* Couleur Papier */
+    color: #1A1A1A;
+    /* Couleur Encre */
+    font-family: 'Helvetica', sans-serif;
+    /* Ou ta font principale */
+}
+
+.sticky-features__wrap {
+    width: 100%;
+    position: relative;
+    /* Pas de padding latéral ici, on gère avec le container */
+}
+
+.sticky-features__scroll {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10vh;
+}
+
+.sticky-features__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 50/50 */
+    gap: 4em;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* --- COLONNE GAUCHE (VISUALS) --- */
+.sticky-feaures__col.is--img {
+    position: relative;
+    height: 60vh;
+    /* Hauteur des plans */
+    border: 1px solid #1A1A1A;
+    /* Cadre fin brutalist */
+    background: #D9D9D9;
+    /* On enlève le border-radius du code original pour faire "carré" */
+}
+
+.sticky-features__img-list {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.sticky-features__img-item {
+    /* C'est ici que la magie du clip-path opère */
+    /* J'ai enlevé le "round .75em" pour avoir des coins carrés */
+    -webkit-clip-path: inset(50% 0 50% 0);
+    clip-path: inset(50% 0 50% 0);
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEAE5;
+    /* Fond des plans */
+}
+
+/* Le premier item doit être visible par défaut (clip-path ouvert) */
+[data-sticky-feature-visual-wrap]:first-of-type {
+    clip-path: inset(0% 0 0% 0);
+}
+
+/* Style temporaire pour remplacer les images par des blocs de couleur/texte */
+.plan-visual {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.plan--1 {
+    background-color: #dcdcdc;
+}
+
+/* Gris clair */
+.plan--2 {
+    background-color: #c0c0c0;
+}
+
+/* Gris moyen */
+.plan--3 {
+    background-color: #a9a9a9;
+}
+
+/* Gris foncé */
+
+/* --- BARRE DE PROGRESSION --- */
+.sticky-features__progress-w {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    /* Juste sous le cadre */
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sticky-features__progress-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #1A1A1A;
+    /* Barre noire */
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+}
+
+/* --- COLONNE DROITE (TEXTE) --- */
+.sticky-features__text-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+    /* Espace réservé pour le texte */
+}
+
+.sticky-features__text-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+[data-sticky-feature-item]:first-of-type {
+    visibility: visible;
+}
+
+.sticky-features__tag {
+    font-family: 'nm-mono', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0.6;
+    color: var(--black);
+}
+
+.sticky-features__heading {
+    font-size: 3rem;
+    line-height: 1;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+}
+
+.sticky-features__p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+/* Ajout pour le style "Tableau technique" */
+.specs-grid {
+    display: flex;
+    gap: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid #1A1A1A;
+    padding-top: 10px;
+    width: 100%;
+    font-family: 'nm-mono', monospace;
+    color: var(--black);
+}

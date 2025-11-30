@@ -1,0 +1,63 @@
+@import './base/variables.css';
+@import './base/typography.css';
+@import './components/button.css';
+@import './components/cursor.css';
+@import './components/loader.css';
+@import './components/location-preview.css';
+@import 'components/nav.css';
+@import 'components/loader.css';
+
+/* Sections */
+@import './sections/concept.css';
+@import './sections/contact.css';
+@import './sections/formulas.css';
+@import './sections/gallery.css';
+@import 'sections/hero.css';
+@import './sections/hero.css';
+@import './sections/location.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'nm-regular', sans-serif;
+    font-size: var(--size-font);
+    background-color: var(--white);
+    transition: opacity 0.5s ease;
+}
+
+body.is-loaded {
+    opacity: 1;
+}
+
+main {
+    background-color: var(--black);
+}
+
+.section {
+    min-height: 100vh;
+    /* Chaque section fait au moins la taille de l'écran */
+    width: 100%;
+    position: relative;
+    /* Juste pour visualiser les séparations */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--size-container);
+    margin: 0 auto;
+}
+
+.container.medium {
+    max-width: calc(var(--size-container) * 0.85);
+}
+
+.container.small {
+    max-width: calc(var(--size-container) * 0.7);
+}

@@ -1,0 +1,128 @@
+/* --- LOCATION SECTION --- */
+.section--location {
+    background-color: #F0EFEA;
+    /* Beige background similar to reference */
+    color: var(--black);
+    padding: 10vh 0;
+    overflow: hidden;
+}
+
+/* Location Part */
+.location__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Map Side */
+.location__map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background-color: #E5E4DE;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.location__map-visual {
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/map-placeholder.jpg');
+    /* Placeholder, user can replace */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    /* Add a subtle pattern or grain if possible later */
+}
+
+/* Content Side */
+.location__content {
+    padding-left: 2rem;
+}
+
+/* Inline Title and Desc for Header */
+.location__title-inline {
+    font-family: 'nm-medium', sans-serif;
+    font-size: calc(var(--size-font) * 3);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    display: block;
+}
+
+.location__desc-inline {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* List */
+.location__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Border separation */
+}
+
+.location__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'nm-regular', sans-serif;
+    font-size: 1rem;
+    color: var(--black);
+    transition: padding-left 0.3s ease;
+}
+
+.location__item:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.location__item:hover {
+    padding-left: 1rem;
+    color: #000;
+}
+
+.location__time {
+    font-family: 'nm-mono', monospace;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+    .missions__container {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .missions__label,
+    .missions__text {
+        width: 100%;
+        text-align: left;
+    }
+
+    .location__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .location__map-wrapper {
+        height: 50vh;
+        order: 2;
+        /* Map below content on mobile? Or above? Reference usually map left/top. Let's keep map top or bottom. */
+        order: -1;
+        /* Map top */
+    }
+
+    .location__content {
+        padding-left: 0;
+    }
+}

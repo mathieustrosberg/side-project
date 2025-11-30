@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'nm-regular';
+    src: url('@/assets/fonts/NeueMontreal-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'nm-medium';
+    src: url('@/assets/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'nm-mono';
+    src: url('@/assets/fonts/PPNeueMontrealMono-Book.otf') format('opentype');
+}

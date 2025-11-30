@@ -1,0 +1,75 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 5%;
+    /* Match container padding usually */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    mix-blend-mode: difference;
+    /* Ensure visibility on light/dark backgrounds */
+    color: var(--white);
+}
+
+.nav__logo {
+    font-family: 'nm-medium', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.nav__subtitle {
+    font-family: 'nm-regular', sans-serif;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.nav__cta {
+    background: transparent;
+    /* Transparent to blend with mix-blend-mode or just simple text */
+    color: currentColor;
+    /* Inherit from nav color (white via mix-blend-mode) */
+    border: 1px solid currentColor;
+    padding: 0.75rem 1.5rem;
+    font-family: 'nm-mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav__cta:hover {
+    background: currentColor;
+    color: var(--black);
+    /* Invert on hover */
+}
+
+/* If the user specifically wanted the EXACT footer button style (filled white): */
+/* Overriding the above to match footer style exactly but kept small */
+.nav__cta {
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    mix-blend-mode: normal;
+    /* Reset blend mode for the button if we want it to pop */
+}
+
+.nav__cta:hover {
+    transform: translateX(5px);
+    background: var(--white);
+    color: var(--black);
+}
+
+/* Adjust nav to not use mix-blend-mode on the whole thing if we want the button to be white */
+.nav {
+    mix-blend-mode: normal;
+    color: var(--white);
+    /* Default text color */
+}
